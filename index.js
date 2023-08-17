@@ -3,7 +3,8 @@ const palavrasJogo = ["ABACATE", "ABACAXI","ACEROLA","AÇAÍ","ARAÇA","ABACATE"
 
 const palavraSecreta = palavrasJogo [Math.floor(Math.random() * palavrasJogo.length)];
 const letrasErradas = [];
-const letrasCorretas = [];
+const letrasCertas = [];
+
 var erros = 0;
 var forca = document.getElementById("forca-game");
 
@@ -12,7 +13,7 @@ document.addEventListener("keydown", (evento) =>
 {
       const letra = evento.key.toUpperCase();
 
-      if (letrasErradas.includes(letra)) 
+      if (letrasErradas.includes(letra))  
       {
         alert("Essa letra já foi!");
       } 
@@ -20,12 +21,12 @@ document.addEventListener("keydown", (evento) =>
       {
         if (palavraSecreta.includes(letra)) 
         {
-          letrasCorretas.push(letra);
+          letrasCertas.push(letra);
         } 
         else 
         {
           letrasErradas.push(letra);
-          erros += 1;
+          erros += 1;                               //Controle dos Erros
         }
       }
 
@@ -50,13 +51,13 @@ document.addEventListener("keydown", (evento) =>
     
     palavraSecreta.split("").forEach((letra) => 
     {
-      if (letrasCorretas.includes(letra)) 
+      if (letrasCertas.includes(letra)) 
       {
         divPalavraSecreta.innerHTML += `${letra}`;
       } 
       else 
       {
-        divPalavraSecreta.innerHTML += `*`;
+        divPalavraSecreta.innerHTML += `_`;
       }
     }
     );
@@ -93,7 +94,7 @@ document.addEventListener("keydown", (evento) =>
   
     if (mensagem) 
     {
-        document.querySelector(".popup-texto").innerHTML = mensagem;
+        document.querySelector(".popup-texto").innerHTML = mensagem;                    //MOSTRA O POPUP
         document.querySelector(".popup").style.visibility = "visible";
     }
   }

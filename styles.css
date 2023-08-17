@@ -87,8 +87,12 @@ body
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
+
 .btn-tentar-novamente 
 {
+  /* Peguei no https://getcssscan.com/css-buttons-examples */
+  
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
   letter-spacing: 2px;
