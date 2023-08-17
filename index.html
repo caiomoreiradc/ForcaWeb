@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca do Caio</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="title">
+        <h1>Jogo da Forca!</h1>
+        <h2>Aperta uma tecla para iniciar!</h2>
+    </div>
+
+    <div class="forca">
+        <img src="Resources/1.png" alt="forca" id="forca-game">
+        <div class="palavra-secreta"></div>  
+    </div>
+
+    <div class="tentativas">
+        <div class="letras-erradas">
+            <h3>Letras Erradas</h3>
+            <h4 class="erradas-letras"></h4>
+        </div>
+    </div>
+
+    <div class="popup">
+        <p class="popup-texto">Fim de Jogo! Desejar Jogar novamente?</p>
+        <button class="btn-tentar-novamente" onclick="reiniciarJogo()">Tentar Novamente!</button>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
