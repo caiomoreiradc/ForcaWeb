@@ -7,14 +7,17 @@ const letrasCertas = [];
 
 var erros = 0;
 var forca = document.getElementById("forca-game");
-
+var failAudio = new Audio("Resources/Audio/fail.mp3");
+var winAudio = new Audio("Resources/Audio/win.mp3");
+var uhAudio = new Audio("Resources/Audio/uh.mp3");
 
 document.addEventListener("keydown", (evento) => 
 {
       const letra = evento.key.toUpperCase();
 
-      if (letrasErradas.includes(letra))  
+      if (letrasCertas.includes(letra) || letrasErradas.includes(letra) )  
       {
+        uhAudio.play();
         alert("Essa letra já foi!");
       } 
       else 
@@ -31,16 +34,16 @@ document.addEventListener("keydown", (evento) =>
       }
 
       desenharForca();
-      mostrarErros();
       mostrarAcertos();
+      mostrarErros();
       verificarStatusJogo();;
-  });
+});
 
   function desenharForca() 
   {
     if (erros >= 0 && erros <= 5)
     {
-        forca.src = `Resources/${erros + 1}.png`;
+        forca.src = `Resources/Images/${erros + 1}.png`;
     }
   }
 
@@ -82,8 +85,7 @@ document.addEventListener("keydown", (evento) =>
     if (letrasErradas.length === 5) 
     {
       mensagem = "Fim de jogo! Você perdeu!";
-      forca.src = "Resources/7.png";
-
+      forca.src = "Resources/Images/7.png";
     }
   
     if (palavraSecreta === divPalavraSecreta.innerText) 
@@ -96,6 +98,15 @@ document.addEventListener("keydown", (evento) =>
     {
         document.querySelector(".popup-texto").innerHTML = mensagem;                    //MOSTRA O POPUP
         document.querySelector(".popup").style.visibility = "visible";
+
+        if(erros>=5)
+        {
+            failAudio.play();
+        }
+        else
+        {
+            winAudio.play();
+        }
     }
   }
 
