@@ -10,9 +10,10 @@ var forca = document.getElementById("forca-game");
 var failAudio = new Audio("Resources/Audio/fail.mp3");
 var winAudio = new Audio("Resources/Audio/win.mp3");
 var uhAudio = new Audio("Resources/Audio/uh.mp3");
-
+var keyboardClick = new Audio("Resources/Audio/keyboardclick.mp3");
 document.addEventListener("keydown", (evento) => 
 {
+      keyboardClick.play();
       const letra = evento.key.toUpperCase();
 
       if (letrasCertas.includes(letra) || letrasErradas.includes(letra) )  
