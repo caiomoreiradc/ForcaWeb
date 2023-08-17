@@ -1,5 +1,5 @@
 # Jogo da Forca
-Use your keyboard to guess the word or get hang by Academia
+- Challenge your mind by attempting to decipher the hidden word before the gallows are complete. Every incorrect guess brings the hangman's fate closer, adding an element of excitement to every decision you make. Choose your letters wisely, and with each correct guess, reveal more of the mystery word.
 
 ## Screenshots
 
